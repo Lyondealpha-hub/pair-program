@@ -1,14 +1,9 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ProfilePic from './components/ProfilePic';
-
+import React, { useState } from 'react'
+import AddTask from './components/AddTask'
 function App() {
   return (
-       <div>
-        <ProfilePic />
-       </div>
-  );
+    <AddTask />
+  )
 }
 
-export default App;
+export default App
