@@ -3,9 +3,9 @@ import React from 'react'
 export const Tasklist = () => {
   return (
     <>
-    <div className='h-screen space-y-4'>
+    <div className='h-screen justify-center space-y-4 m-6'>
         <div className='justify-center space-y-4'>
-        <h1 className='font-serif... text-2xl'>Task Manager</h1>
+        <h1 className='font-mono... text-3xl text-slate-600'>Task Manager</h1>
         <div className='flex justify-left space-x-3'>
         <input className="bg-white appearance-none border-2 border-gray-600 rounded w-fit py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="task-title" type="text" value="task title" />
         <input className="bg-white appearance-none border-2 border-gray-600 rounded w-fit py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="name" type="text" value="name" />
@@ -32,27 +32,46 @@ export const Tasklist = () => {
         <tbody>
             <tr className="bg-white dark:bg-gray-800">
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Innorik meeting
                 </th>
                 <td className="px-6 py-4">
+                    Dennis
                 </td>
                 <td className="px-6 py-4">
+                    11-03-23
                 </td>
             </tr>
             <tr className="bg-white dark:bg-gray-800">
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Pair programming
                 </th>
                 <td className="px-6 py-4">
+                    Ahmed
                 </td>
                 <td className="px-6 py-4">
+                    11-03-23
                 </td>
             </tr>
             <tr className="bg-white dark:bg-gray-800">
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Personal studies
                 </th>
                 <td className="px-6 py-4">
-                   
+                   Stone
                 </td>
                 <td className="px-6 py-4">
+                    11-03-23
+                </td>
+            </tr>
+            <tr className="bg-white dark:bg-gray-800">
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Hit the gym
+                </th>
+                <td className="px-6 py-4">
+                   Stone
+                </td>
+                <td className="px-6 py-4">
+                    11-03-23
                 </td>
             </tr>
         </tbody>
