@@ -18,6 +18,7 @@ type todoItemsProp = {
     todos: todoProp[];
 };
 
+ 
 export const AppContext = createContext<any>(undefined);
 
 export const TodolistContext: React.FC<Props> = ({ children }) => {

@@ -1,6 +1,7 @@
 import React from 'react'
 
 export const AddTask = () => {
+
   return (
     <main className='flex flex-col w-1/2 px-8 py-10 rounded-xl bg-stone-50'>
 

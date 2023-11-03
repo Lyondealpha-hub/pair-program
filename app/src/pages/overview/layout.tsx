@@ -12,3 +12,5 @@ export const RootLayout = () => {
     </main>
   )
 }
+
+
