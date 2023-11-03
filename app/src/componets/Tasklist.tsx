@@ -20,14 +20,14 @@ export const TaskList = () => {
       <table className="w-full text-sm text-left">
   <thead>
     <tr>
-      <th>Song</th>
-      <th className='w-full text-sm text-center'>Artist</th>
+      <th>Task</th>
+      <th className='w-full text-sm text-center'>Date</th>
       <th className='w-full text-sm text-left'>Year</th>
     </tr>
   </thead>
   <tbody className='w-full text-sm text-center'>
     <tr>
-      <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+      <td>The Sliding </td>
       <td>Malcolm Lockyer</td>
       <td>1961</td>
     </tr>
