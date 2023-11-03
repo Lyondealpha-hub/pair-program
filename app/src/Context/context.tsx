@@ -1,14 +1,21 @@
-import { createContext } from "react";
-// import  from '../data/data.json'
+import { createContext,useContext,useState } from "react";
+import data from '../data/data.json'
 
-export const Data  = createContext('');
+export const Data  = createContext<any>(null);
 
-export const DataProvder = ()=>{
+export const DataProvider = ({children}: any)=>{
+    
+    const [task, setTask] = useState(()=>data);
+    
     return (<>
-    <Data.Provider value="">
-
-    </Data.Provider>
+        <Data.Provider value={{task,setTask}}>
+            {children}
+        </Data.Provider>
     </>)
+}
+
+export const useData = ()=>{
+    return useContext(Data);
 }
 
 

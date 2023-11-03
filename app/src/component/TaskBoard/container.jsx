@@ -4,7 +4,8 @@ import { ProgressList } from "../ProgressList/progressList"
 import { TaskList } from "../TaskList/TaskList"
 
 export const Container = () => {
-return (<>
+return (
+<main className="flex flex-col h-screen w-screen">
 <div className="bg-white rounded-lg m-5 ml-10 mr-8 shadow-lg p-5">
 <h1 className="font-bold text-3xl m-5">Tasks</h1>
 <div className=""><AddTask/></div>
@@ -14,5 +15,5 @@ return (<>
     <DoneList/>
 </div>
 </div>
-</>)
+</main>)
 }
