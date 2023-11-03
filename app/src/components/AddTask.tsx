@@ -22,30 +22,6 @@ const Form = () => {
 function AddTask() {
     return (
       <div>
-        <div>
-          <h2 className='text-center text-2xl font-bold mb-4 mt-10'>Task Management System</h2>
-        </div>
-        <div>
-          <h3 className='mx-4 mt-8 text-2xl font-bold mb-4 text-center'>Add Task</h3>
-          <div>
-          <div className='text-center'>
-            <a
-                href="#"
-                className="text-blue-500 hover:text-blue-700 underline"
-            >
-                Edit
-            </a>
-          </div>
-          <div className='text-center'>
-            <a
-                href="#"
-                className="text-blue-500 hover:text-blue-700 underline"
-            >
-                Delete
-            </a>
-          </div>
-          </div>
-        </div>
         <div className="max-w-md mx-auto p-6 bg-white rounded-md shadow-md">
         <form >
           <div className="mb-4">
@@ -54,8 +30,6 @@ function AddTask() {
               type="text"
               id="name"
               name="name"
-              // value={formData.name} onSubmit={handleSubmit}
-              // onChange={handleChange}
               className="border border-gray-300 rounded-md w-full py-2 px-3"
             />
           </div>
@@ -65,8 +39,6 @@ function AddTask() {
               type="email"
               id="email"
               name="email"
-              // value={formData.email}
-              // onChange={handleChange}
               className="border border-gray-300 rounded-md w-full py-2 px-3"
             />
           </div>
@@ -75,8 +47,6 @@ function AddTask() {
             <textarea
               id="message"
               name="message"
-              // value={formData.message}
-              // onChange={handleChange}
               className="border border-gray-300 rounded-md w-full py-2 px-3"
               
             ></textarea>
