@@ -1,15 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Tasklist } from './components/container/Tasklist';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          U
-        </p>
-      </header>
+    <div className="">
+          <Tasklist />
     </div>
   );
 }
