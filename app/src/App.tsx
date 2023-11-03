@@ -1,13 +1,16 @@
-import React from 'react'
-import { Container } from './component/Container/container'
 
+import { Container } from './component/TaskBoard/container'
 
 
 const App = () => {
   return (
-    <div>
-      <Container/>
-    </div>
+   
+    <>
+    
+        <Container/>
+  
+    </>
+   
   )
 }
 
