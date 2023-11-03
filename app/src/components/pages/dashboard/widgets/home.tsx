@@ -1,6 +1,6 @@
 const HomePage = () => {
     return ( 
-        <div>Home Page</div>
+        <main className="flex-1 h-full bg-zinc-50"></main>
      );
 }
  
