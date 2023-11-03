@@ -1,10 +1,12 @@
 import React from 'react'
-import { Userinfo } from './component/UserInfo/userinfo'
+import { Container } from './component/Container/container'
+
+
 
 const App = () => {
   return (
     <div>
-      <Userinfo/>
+      <Container/>
     </div>
   )
 }
