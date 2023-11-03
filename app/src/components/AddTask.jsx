@@ -8,16 +8,52 @@ const Form = () => {
   });
 
 
-  const handleChange = (e: React.ChangeEvent<any>) => {
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.ChangeEvent<any>) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission here
     console.log('Form submitted with data:', formData);
   };
 };
+
+//beginning of copy
+const App = () => {
+  const [tasks, setTasks] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+  const [editingIndex, setEditingIndex] = useState(null);
+
+  const addTask = () => {
+    if (inputValue.trim() !== '') {
+      if (editingIndex !== null) {
+        // Update existing todo if in edit mode
+        const updatedTasks = [...tasks];
+        updatedTasks[editingIndex] = inputValue;
+        setTasks(updatedTasks);
+        setEditingIndex(null);
+      } else {
+        // Add a new todo
+        setTasks([...tasks, inputValue]);
+      }
+      setInputValue('');
+    }
+  };
+
+
+  const updateTask = (index) => {
+    setInputValue(tasks[index]);
+    setEditingIndex(index);
+  };
+
+  const deleteTask = (index) => {
+    const updatedTasks = tasks.filter((_, i) => i !== index);
+    setTasks(updatedTasks);
+    setEditingIndex(null);
+  };
+}
+  //end of copy
 
 function AddTask() {
     return (
