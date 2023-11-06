@@ -1,35 +1,83 @@
 import React from 'react'
+import { AddCategories } from './AddCategories'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import useTodolist from '../../../lib/context/context'
+
+type Inputs = {
+  title: string,
+  dueDate: string,
+  category: string,
+  description: string
+}
+
 
 export const AddTask = () => {
 
+  const {setTodoItems, todoItems} = useTodolist()
+
+  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>(
+      {
+            defaultValues: {
+            title: '',
+            dueDate: '',
+            category: '',
+            description: ''
+          }
+        }
+  );
+
+  const onSubmit: SubmitHandler<Inputs> = (data:Inputs) => {
+
+    const newTodo = {
+      id: todoItems.todos.length + 1,
+      title: data.title,
+      dueDate: data.dueDate,
+      category: data.category,
+      description: data.description
+    }
+
+    setTodoItems({
+      todos: [...todoItems.todos, newTodo]
+    })
+
+
+    console.log(todoItems)
+
+  }
+
+
   return (
-    <main className='flex flex-col w-1/2 px-8 py-10 rounded-xl bg-stone-50'>
+    <main className='flex px-8 py-10 rounded-xl bg-stone-50 flex-1'>
 
-      <p className="text-cyan-800 font-bold text-xl tracking-wider">Add New Task</p>
+      <AddCategories/>
 
-      <form action="" className="px-6 flex flex-col mt-8 space-y-6">
-        <section className="grid grid-cols-3 gap-x-6 gap-y-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="px-6 flex flex-col mt-8 space-y-6">
+        <section className="flex flex-col space-y-3">
 
           <div className="flex flex-col space-y-1.5">
             <label className='text-sm font-medium text-slate-700 tracking-tight' htmlFor="">{'Title'}</label>
-            <input type="text" className="bg-stone-100 focus:bg-white focus:border focus:border-blue-300 text-slate-400 font-medium text-base px-6 py-2 rounded-xl outline-none border placeholder-slate-300" placeholder='Enter Task Title' />
+            <input type="text" className="bg-stone-100 focus:bg-white focus:border focus:border-blue-300 text-slate-400 font-medium text-base px-6 py-2 rounded-xl outline-none border placeholder-slate-300" placeholder='Enter Task Title' {...register("title", { required: true })} />
+            {errors.title && <span className="text-red-500 text-sm">This field is required</span>}
           </div>
 
           <div className="flex flex-col space-y-1.5">
             <label className='text-sm font-medium text-slate-700 tracking-tight' htmlFor="">{'Due Date'}</label>
-            <input type="date" className="bg-stone-100 text-slate-400 font-medium text-base px-6 py-2 rounded-xl outline-none border" />
+            <input type="date" className="bg-stone-100 text-slate-400 font-medium text-base px-6 py-2 rounded-xl outline-none border" {...register("dueDate", { required: true })} />
+            {errors.dueDate && <span className="text-red-500 text-sm">This field is required</span>}
           </div>
 
           <div className="flex flex-col space-y-1.5">
             <label className='text-sm font-medium text-slate-700 tracking-tight' htmlFor="">{'Category'}</label>
-            <input type="text" className="bg-stone-100 focus:bg-white focus:border focus:border-blue-300 text-slate-400 font-medium text-base px-6 py-2 rounded-xl outline-none border" placeholder='Type Category' />
+            <input type="text" className="bg-stone-100 focus:bg-white focus:border focus:border-blue-300 text-slate-400 font-medium text-base px-6 py-2 rounded-xl outline-none border" placeholder='Type Category' {...register("category", { required: true })} />
+            {errors.category && <span className="text-red-500 text-sm">This field is required</span>}
           </div>
         </section>
 
         
           <div className="flex flex-col space-y-1.5">
             <label className='text-sm font-medium text-slate-700 tracking-tight' htmlFor="">{'Description'}</label>
-            <textarea name="" id=""  rows={4} className="bg-stone-100 focus:bg-white focus:border focus:border-blue-300 px-6 py-2 rounded-xl outline-none border placeholder-slate-300 placeholder-opacity-50 placeholder-shown resize-none"></textarea>
+            <textarea id=""  rows={4} className="bg-stone-100 focus:bg-white focus:border focus:border-blue-300 px-6 py-2 rounded-xl outline-none border placeholder-slate-300 placeholder-opacity-50 placeholder-shown resize-none" {...register("description", { required: true })}></textarea>
+            {errors.description && <span className="text-red-500 text-sm">This field is required</span>}
           </div>
 
           <button className="px-6 py-2 rounded-lg  border  font-medium text-base bg-sky-400">
@@ -40,3 +88,5 @@ export const AddTask = () => {
     </main>
   )
 }
+
+

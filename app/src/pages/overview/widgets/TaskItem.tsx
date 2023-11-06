@@ -32,7 +32,7 @@ export const TaskItem = ({title, dueDate, category, description}:TaskItemProps) 
             </span>
             <time className="text-xs font-semibold text-slate-400">{`Due on ${dueDate}`}</time>
         </span>
-        <p className="text-slate-700 text-sm font-normal tracking-wide mb-5 truncate">{'lorem ipsum dolor'}</p>
+        <p className="text-slate-600 text-sm font-semibold tracking-wide mb-5 truncate">{description}</p>
 
         <footer className="flex  self-end space-x-2 items-center">
             <span className="flex rounded-md p-2 bg-rose-100 cursor-pointer absolute bottom-0 right-0 mr-2 mb-2 mt-2 space-x-2">
