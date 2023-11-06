@@ -1,11 +1,11 @@
-import { Board } from "../Common/Board";
-import { CategoryBoard } from "../Common/categoryBoard";
-import { Counts } from "../Specific/Counts";
-import { DoneItems } from "../DoneItems/DoneItems";
-import { ProgressItems } from "../ProgressItems/progressItems";
-import { ReviewItems } from "../ReviewItems/ReviewItems";
-import { SideBar } from "../Specific/Sidebar";
-import { TodoItems } from "../TodoItem/todoitems";
+import { Board } from "./Common/Board";
+import { CategoryBoard } from "./Common/categoryBoard";
+import { Counts } from "./Specific/Counts";
+import { DoneItems } from "./Specific/DoneItems/DoneItems";
+import { ProgressItems } from "./Specific/ProgressItems/progressItems";
+import { ReviewItems } from "./Specific/ReviewItems/ReviewItems";
+import { SideBar } from "./Specific/Sidebar";
+import { TodoItems } from "./Specific/TodoItem/todoitems";
 
 export const Container = () => {
   return (

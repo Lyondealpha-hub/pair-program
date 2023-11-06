@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import { Data } from "../../Context/context";
-import { Card } from "../Common/Card";
+import { Data } from "../../../Context/context";
+import { Card } from "../../Common/Card";
 
 export const TodoItems = () => {
   //   const {task,setTask} = useContext(Data);
