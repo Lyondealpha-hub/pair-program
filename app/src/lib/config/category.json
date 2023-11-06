@@ -7,14 +7,7 @@
         {
             "id": 2,
             "name": "Clothing"
-        },
-        {
-            "id": 3,
-            "name": "Home Goods"
-        },
-        {
-            "id": 4,
-            "name": "Books"
         }
+
     ]
 }

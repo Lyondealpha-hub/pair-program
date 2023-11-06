@@ -25,7 +25,7 @@ export type categoryItemProp = {
 
 };
 
-type categoryItems = {
+export type categoryItems = {
     categories: categoryItemProp[];
 };
 

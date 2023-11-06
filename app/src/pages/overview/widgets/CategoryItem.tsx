@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { categoryItemProp } from '../../../lib/context/context';
+import useTodolist, { categoryItemProp, categoryItems } from '../../../lib/context/context';
 
 type settingsProps = {
   onEditing: boolean,
@@ -8,11 +8,14 @@ type settingsProps = {
 
 export const CategoryItem = ({id, name}:categoryItemProp) => {
 
+  const {setCategoryItems} = useTodolist();
+  const [newname, setNewName] = useState<string>('');
 
   const [settings, setSettings] = useState<settingsProps>({
     onEditing: true,
     onSaving: false,
   })
+
 
   const Delete = () => {
     console.log('Delete')
@@ -30,6 +33,20 @@ export const CategoryItem = ({id, name}:categoryItemProp) => {
       onEditing: !prevSettings.onEditing,
       onSaving: !prevSettings.onSaving,
     }));
+
+
+    setCategoryItems((prevCategoryItems:categoryItems) => ({
+      categories: prevCategoryItems.categories.map((item:categoryItemProp) => {
+        if(item.id === id){
+          return {
+            ...item,
+            name: newname
+          }
+        }
+        return item;
+      })
+    }))
+
   }
 
 
@@ -37,7 +54,7 @@ export const CategoryItem = ({id, name}:categoryItemProp) => {
 
   return (
     <div className="flex flex-row items-center space-x-1 p-2">
-      <input id={id.toString()} value={name} type="text" className={`text-slate-500 font-bold px-4 py-2 text-sm border rounded-xl  outline-none   ${!settings.onEditing ? ' cursor-pointer focus:border focus:border-blue-400 bg-white' :'cursor-not-allowed'}`} disabled={settings.onEditing}/>
+      <input defaultValue={name} onChange={(e) => setNewName(e.currentTarget.value)} id={id.toString()}  type="text" className={`text-slate-500 font-bold px-4 py-2 text-sm border rounded-xl  outline-none   ${!settings.onEditing ? ' cursor-pointer focus:border focus:border-blue-400 bg-white' :'cursor-not-allowed'}`} disabled={settings.onEditing}/>
 
       <span className="flex space-x-2 items-center">
       { settings.onEditing &&        
