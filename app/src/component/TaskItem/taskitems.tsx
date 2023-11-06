@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export const TaskItems = () => {
-    let [tasks , setTasks] = useState(["kjhdf  kjlk dslkj skjkk d","Complete my Assesments","finish InnorX videos","ghtb dshj cxjjhjx cj", "complete lkjldf","dskjhdfkjhd"]);
+    let [tasks , setTasks] = useState(["Complete my Assesments","finish InnorX videos", "complete lkjldf"]);
     return (<>
     <div className="overscroll-contain">
     {
