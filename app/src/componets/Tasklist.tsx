@@ -1,6 +1,9 @@
 import React from "react";
 
 export const TaskList = () => {
+
+  
+
   return (
     <>
       <div className="text-center px-64 bg-blue-50 h-screen">
@@ -10,25 +13,25 @@ export const TaskList = () => {
           <input
             type="text"
             placeholder="Add a new task"
-            className="flex-1 p-2 border rounded-l bg-black text-white rounded-xl"
+            className="flex-1 p-2 border rounded-2 bg-white text-black  rounded-xl"
           />
 
           <input
             type="text"
             placeholder="Description"
-            className="flex-1 p-2 border rounded-l bg-black text-white rounded-xl"
+            className="flex-1 p-2 border rounded-2 bg-white text-black  rounded-xl"
           />
 
           <input
             type="text"
             placeholder="Category"
-            className="flex-1 p-2 border rounded-l bg-black text-white rounded-xl"
+            className="flex-1 p-2 border rounded-2 bg-white text-black  rounded-xl"
           />
 
           <input
-            type="text"
+            type="date" id="date" name="date"
             placeholder="Date"
-            className="flex-1 p-2 border rounded-l bg-black text-white rounded-xl"
+            className="flex-1 p-2 border rounded-2 bg-white text-black rounded-xl"
           />
 
           <button className="bg-blue-500 text-white  rounded-xl px-4 py-2">
@@ -70,14 +73,16 @@ export const TaskList = () => {
                   <td className="px-6 py-4">Lorem</td>
                   <td className="px-6 py-4">1999</td>
                   <td className="px-6 py-4 text-right">
-                    <a
+                  <a
                       href="/"
                       className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                     >
-                      <p>Edit</p> 
-                      <p>
-                      </p> 
+                      Edit
                     </a>
+                    <button className="ml-4 bg-red-500 text-white rounded px-2 py-1">
+                    Delete
+                  </button>
+
                   </td>
                 </tr>
                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -97,6 +102,9 @@ export const TaskList = () => {
                     >
                       Edit
                     </a>
+                    <button className="ml-4 bg-red-500 text-white rounded px-2 py-1">
+                    Delete
+                  </button>
                   </td>
                 </tr>
                 <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -116,6 +124,9 @@ export const TaskList = () => {
                     >
                       Edit
                     </a>
+                    <button className="ml-4 bg-red-500 text-white rounded px-2 py-1">
+                    Delete
+                  </button>
                   </td>
                 </tr>
               </tbody>
