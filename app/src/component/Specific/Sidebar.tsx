@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Data } from "../Context/context";
+import { Data } from "../../Context/context";
 
 
 export const SideBar = () => {
