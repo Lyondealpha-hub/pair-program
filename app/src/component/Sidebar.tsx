@@ -5,10 +5,10 @@ export const SideBar = ()=>{
             <h1 className="font-bold text-xl p-5">Entry</h1>
             
                 <div className="p-5 rounded-lg m-2 shadow-lg">
-                    <input  type="text" placeholder="Title"/>
+                    <input className="p-1" type="text" placeholder="Title"/>
                 </div>
                 <div className="p-5 rounded-lg m-2 shadow-lg">
-                    <select >
+                    <select className="px-8 py-1 text-gray-400 text-left">
                         <option className="text-gray-100">Category</option>
                         <option>Todo</option>
                         <option>In Progress</option>
@@ -17,10 +17,10 @@ export const SideBar = ()=>{
                     </select>
                 </div>
                 <div className="p-5 rounded-lg m-2 shadow-lg">
-                    <textarea placeholder="Description"/>
+                    <textarea className="p-1" placeholder="Description"/>
                 </div>
                 <div className="p-5 rounded-lg m-2 shadow-lg">
-                    <input type="date"/>
+                    <input className="" type="date"/>
                 </div>
              
                 <button className="px-5 py-2 m-2 bg-gray-400 text-white shadow-lg rounded-lg">submit</button>
