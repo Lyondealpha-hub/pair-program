@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { DeleteOutlineRounded, Edit, Done, Add, HourglassBottomRounded } from '@mui/icons-material';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -26,7 +26,7 @@ function ChildModal() {
     const handleClose = () => {
       setOpen(false);
     };
-  
+
     return (
       <React.Fragment>
         <Modal
@@ -55,16 +55,25 @@ export const Tasklist = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const [formData, setFormData] = useState({title: "",name: "",date: ""});
+
+  const handleChange = (event: { target: { name: any; value: any; }; }) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  };
+
+  const handleSubmit = (event: { preventDefault: () => void; }) => {
+    event.preventDefault();
+    alert(`Title: ${formData.title}, Name: ${formData.name}, Date: ${formData.date}`
+    );
+};
+
   return (
     <>
     <div className='h-screen justify-center space-y-4 m-6'>
         <div className='justify-center space-y-6'>
         <h1 className='font-mono... text-3xl text-slate-600'>Task Manager</h1>
-        {/* <div className='flex justify-left space-x-3'>
-        <input className="bg-white appearance-none border-2 border-gray-600 rounded w-fit py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="task-title" type="text" placeholder="task title" />
-        <input className="bg-white appearance-none border-2 border-gray-600 rounded w-fit py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="name" type="text" placeholder="added by" />
-        <input className="bg-white appearance-none border-2 border-gray-600 rounded w-fit py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="date-added" type="text" placeholder="date added" />
-        <button type='submit' className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Add Task</button></div> */}
         <button onClick={handleOpen} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md'>Add Task<Add className='text-sm justify-center'/></button>
         <Modal
         open={open}
@@ -72,15 +81,20 @@ export const Tasklist = () => {
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
       >
-        <Box sx={{ ...style, width: 400 }}>
+        <Box sx={{ ...style, width: 250}}>
             <div className='space-y-3'>
           <h2 className="space-y-3 font-semibold text-gray-600" id="parent-modal-title">Fill in details below to add new task</h2>
-          <div className='justify-center space-y-3'>
-        <input className="bg-white appearance-none border-2 border-gray-600 rounded w-fit py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="task-title" type="text" placeholder="task title" />
-        <input className="bg-white appearance-none border-2 border-gray-600 rounded w-fit py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="name" type="text" placeholder="added by" />
-        <input className="bg-white appearance-none border-2 border-gray-600 rounded w-fit py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="date-added" type="text" placeholder="date added" />
-        </div>
-        <button type="submit" className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md'>Submit</button>
+          <div onSubmit={handleSubmit} className='justify-center space-y-3'>
+      <label htmlFor="title">Title:</label>
+      <input type="text" id="title" name="title" value={formData.title} onChange={handleChange}/>
+
+      <label htmlFor="name">Added by:</label>
+      <input type="name" id="name" name="name" value={formData.name} onChange={handleChange}/>
+
+      <label htmlFor="date">Date Added:</label>
+      <input type="date" id="date" name="date" value={formData.date} onChange={handleChange}/>
+      <button type="submit" className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md'>Submit</button>
+    </div>
         </div>
         <ChildModal />
         </Box>
