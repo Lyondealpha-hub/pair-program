@@ -1,14 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'; 
+  
+function TaskForm(props: { func: (arg0: { title: String; name: string; date: string; }) => void; }) { 
+  const [title, setTitle] = useState(''); 
+  const [name, setName] = useState(''); 
+  const [date, setDate] = useState(''); 
+  
+  const changeTitle = (event: { target: { value: React.SetStateAction<string>; }; }) => { 
+    setTitle(event.target.value); 
+  }; 
 
-export const AddTask = () => {
-  return (
-    <>
-    <div className='flex justify-center space-x-3'>
-        <input className="bg-white appearance-none border-2 border-gray-600 rounded w-fit py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="task-title" type="text" placeholder="task title" />
-        <input className="bg-white appearance-none border-2 border-gray-600 rounded w-fit py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="name" type="text" placeholder="added by" />
-        <input className="bg-white appearance-none border-2 border-gray-600 rounded w-fit py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="date-added" type="text" placeholder="date added" />
-        <button type='submit' className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Add Task</button>
-        </div>
-        </>
-    )
-}
+  const changeName = (event: { target: { value: React.SetStateAction<string>; }; }) => { 
+    setName(event.target.value); 
+  }; 
+  
+  const changeDate = (event: { target: { value: React.SetStateAction<string>; }; }) => { 
+    setDate(event.target.value); 
+  }; 
+  
+  const transferValue = (event: { preventDefault: () => void; }) => { 
+    event.preventDefault(); 
+    const val = { 
+      title,
+      name, 
+      date, 
+    }; 
+    props.func(val); 
+    clearState(); 
+  }; 
+  
+  const clearState = () => { 
+    setTitle('');
+    setName(''); 
+    setDate(''); 
+  }; 
+  
+  return ( 
+    <div className='space-x-3 space-y-12'> 
+      <label>Title</label> 
+      <input type="text" value={title} onChange={changeTitle} className='border-solid border-2 rounded-sm border-blue-400' /> 
+      <label>Added By</label> 
+      <input type="text" value={name} onChange={changeName} className='border-solid border-2 rounded-sm border-blue-400' /> 
+      <label>Date Added</label> 
+      <input type="date" value={date} onChange={changeDate} className='border-solid border-2 rounded-sm border-blue-400' /> 
+      <button onClick={transferValue} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md'>Add Task</button> 
+    </div> 
+  ); 
+} 
+  
+export default TaskForm;
