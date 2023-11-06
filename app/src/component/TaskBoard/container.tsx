@@ -13,7 +13,6 @@ export const Container = () => {
       <Board bgColor={"gray-700"} padding={4} margin={2}>
         <h1 className="font-bold text-white text-3xl m-2">Tasks Board</h1>
         <hr className="m-3" />
-        {/* <div className=""><AddTask/></div> */}
         <div className="flex justify-center gap-2">
           <SideBar />
           <div className="flex  bg-white rounded-lg shadow-lg p-2">
