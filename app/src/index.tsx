@@ -8,9 +8,12 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
+  <React.StrictMode>
     <TodolistContext>
       <App />
     </TodolistContext>
+  </React.StrictMode>
+
 );
 
 
