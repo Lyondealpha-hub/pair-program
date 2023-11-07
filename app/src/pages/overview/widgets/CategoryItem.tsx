@@ -8,7 +8,7 @@ type settingsProps = {
 
 export const CategoryItem = ({id, name}:categoryItemProp) => {
 
-  const {setCategoryItems} = useTodolist();
+  const {setCategoryItems, categoryItems} = useTodolist();
   const [newname, setNewName] = useState<string>('');
 
   const [settings, setSettings] = useState<settingsProps>({
@@ -18,7 +18,12 @@ export const CategoryItem = ({id, name}:categoryItemProp) => {
 
 
   const Delete = () => {
-    console.log('Delete')
+    const updatedValues = categoryItems.categories.filter((item:categoryItemProp) => item.id !== id)
+    
+    setCategoryItems({
+      categories: updatedValues
+    })
+
   }
 
   const Edit = () => {
