@@ -3,7 +3,8 @@ import { AddCategories } from './AddCategories'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import useTodolist, { categoryItemProp } from '../../../lib/context/context'
 
-type Inputs = {
+export type AddTasksProps = {
+  id?: number,
   title: string,
   dueDate: string,
   category: string,
@@ -15,7 +16,7 @@ export const AddTask = () => {
 
   const {setTodoItems, todoItems, categoryItems} = useTodolist()
 
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<Inputs>(
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<AddTasksProps>(
       {
             defaultValues: {
             title: '',
@@ -26,7 +27,7 @@ export const AddTask = () => {
         }
   );
 
-  const onSubmit: SubmitHandler<Inputs> = (data:Inputs) => {
+  const onSubmit: SubmitHandler<AddTasksProps> = (data:AddTasksProps) => {
 
     const newTodo = {
       id: todoItems.todos.length + 1,
@@ -77,7 +78,7 @@ export const AddTask = () => {
             </select>
             {errors.category && <span className="text-red-500 text-sm">Category field is required</span>}
           </div>
-          
+
         </section>
 
         

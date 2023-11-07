@@ -17,6 +17,7 @@ export const TaskList = () => {
                 {todoItems.todos.map((item:todoProp) => (
                     <TaskItem
                         key={item.id}
+                        id={item.id}
                         title={item.title}
                         dueDate={item.dueDate}
                         category={item.category}
