@@ -13,62 +13,7 @@
             "dueDate": "2022-09-15",
             "description": "Complete all remaining tasks",
             "category": "Work"
-        },
-        {
-            "id": 3,
-            "title": "Call mom",
-            "dueDate": "2022-09-13",
-            "description": "Wish her happy birthday",
-            "category": "Family"
-        },
-        {
-            "id": 4,
-            "title": "Go for a run",
-            "dueDate": "2022-09-10",
-            "description": "Run for 30 minutes",
-            "category": "Fitness"
-        },
-        {
-            "id": 5,
-            "title": "Read book",
-            "dueDate": "2022-09-12",
-            "description": "Finish reading 'The Alchemist'",
-            "category": "Personal"
-        },
-        {
-            "id": 6,
-            "title": "Pay bills",
-            "dueDate": "2022-09-25",
-            "description": "Electricity, water, internet",
-            "category": "Finance"
-        },
-        {
-            "id": 7,
-            "title": "Clean house",
-            "dueDate": "2022-09-18",
-            "description": "Vacuum, dust, mop",
-            "category": "Chores"
-        },
-        {
-            "id": 8,
-            "title": "Watch movie",
-            "dueDate": "2022-09-11",
-            "description": "Watch 'The Shawshank Redemption'",
-            "category": "Entertainment"
-        },
-        {
-            "id": 9,
-            "title": "Attend meeting",
-            "dueDate": "2022-09-14",
-            "description": "Discuss project progress",
-            "category": "Work"
-        },
-        {
-            "id": 10,
-            "title": "Visit dentist",
-            "dueDate": "2022-09-30",
-            "description": "Get teeth cleaning",
-            "category": "Health"
         }
+
     ]
 }
